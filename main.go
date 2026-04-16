@@ -9,7 +9,9 @@ func main() {
 
 	fmt.Println("############################################\n" +
 		"#  Калькулятор расчета индекса массы тела  #\n" +
-		"############################################")
+		"#                                          #\n" +
+		"#         Created by Terekhov A.S.         #\n" +
+		"############################################\n")
 
 	var userHeight, userKg float64 = getInput()
 
@@ -25,19 +27,21 @@ func outputResult(imt float64) {
 	fmt.Println(result)
 	switch {
 	case imt < 16.0:
-		fmt.Println("У вас сильный дефицит массы тела")
-	case imt >= 16 && imt < 18.5:
-		fmt.Println("У вас дефицит массы тела")
-	case imt >= 18.5 && imt < 25:
+		fmt.Println("У вас выраженный дефицит массы тела")
+	case imt >= 16.0 && imt <= 16.9:
+		fmt.Println("У вас недостаточная масса тела (умеренный дефицит)")
+	case imt >= 17.0 && imt <= 18.4:
+		fmt.Println("У вас недостаточная масса тела (лёгкий дефицит)")
+	case imt >= 18.5 && imt <= 24.9:
 		fmt.Println("Ваша масса тела в норме")
-	case imt >= 25 && imt < 30:
-		fmt.Println("У вас избыточная масса тела")
-	case imt >= 30 && imt < 35:
-		fmt.Println("У вас первая степень ожирения")
-	case imt >= 35 && imt < 40:
-		fmt.Println("У вас вторая степень ожирения")
+	case imt >= 25.0 && imt <= 29.9:
+		fmt.Println("У вас избыточная масса тела (предожирение)")
+	case imt >= 30.0 && imt <= 34.9:
+		fmt.Println("У вас ожирение I степени")
+	case imt >= 35.0 && imt <= 39.9:
+		fmt.Println("У вас ожирение II степени")
 	case imt >= 40:
-		fmt.Println("У вас третья степень ожирения")
+		fmt.Println("У вас ожирение III степени (морбидное)")
 	}
 }
 
