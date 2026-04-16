@@ -31,4 +31,4 @@ $$
 
 1. Запустите приложение:
    ```bash
-   IMT_calc.exe
+   .\IMT_calc.exe
